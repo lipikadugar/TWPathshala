@@ -20,78 +20,60 @@ public class Rover {
         pos = in.nextLine();
         Move m = new Move(x, y, dir);
 
-
-
         Scanner scanner = new Scanner(pos);
-
-
-
-            m.Rover(scanner.next(),x,y);
-
-
+        m.Rover(scanner.next());
         m.display();
-
 
     }
 }
 
 class Move
 {
-   // int x, y, i=0;
-    int i=0;
+    int x, y, i=0;
     String initd;
-    String map[] = new String[]{"N","W","S","E"};
+    String map[] = {" N"," W"," S"," E"};
     char[] stringArray;
-    Move(int x, int y, String s)
+    Move(int a, int b, String s)
     {
 
-        x = x;
-        y = y;
+        x = a;
+        y = b;
         initd = s;
 
     }
 
-    void Rover(String next,int x, int y)
+    void Rover(String next)
     {
-
-
         stringArray = next.toCharArray();
-//        System.out.println(initd);
         for(i=0;i<4;i++)
         {
             if(map[i].equals(initd))
                 break;
-            else
-                System.out.println("Map");
         }
-//        System.out.println("New");
-//        for(int index=0; index < stringArray.length; index++)
-//            System.out.print(stringArray[index]);
+
         for(int j=0;j<stringArray.length;j++) {
 
-            if (stringArray[j]=='l') {
+            if (stringArray[j]=='L') {
                 i++;
                 if (i > 3) i = 0;
-                System.out.println("Left");
-
-            } else if (stringArray[j]=='r') {
+            }
+            else if (stringArray[j]=='R') {
                 i--;
                 if (i < 0) i = 3;
-            } else if (stringArray[j]=='m') {
-                System.out.println("Move");
+            }
+            else if (stringArray[j]=='M') {
                 if (i == 0) y++;
                 if (i == 1) x--;
-                if (i == 2) x++;
-                if (i == 3) y--;
+                if (i == 2) y--;
+                if (i == 3) x++;
             }
-            System.out.println(x +" "+ y +" "+ map[i]);
         }
 
     }
 
     void display()
     {
-       // System.out.println(x+" "+y+" " +i);
+       System.out.println(x + " " + y + " " + map[i]);
     }
 
 
