@@ -48,4 +48,11 @@ public class moveRoverTest {
 
         assertEquals("2 3 N", rover.move());
     }
+
+    @Test
+    public void shouldRoverTurnsRight() {
+        Rover rover = new Rover(0, 8, "S", 5, 5, "R");
+
+        assertEquals("0 8 W", rover.move());
+    }
 }

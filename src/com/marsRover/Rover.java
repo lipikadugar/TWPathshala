@@ -40,6 +40,11 @@ public class Rover {
             i++;
             if (i > 3) i = 0;
         }
+        else if (Objects.equals(move, "R"))
+        {
+            i--;
+            if (i < 0) i = 3;
+        }
         return positionX + " " + positionY + " " + map[i];
     }
 }
