@@ -22,8 +22,15 @@ public class moveRoverTest {
     }
 
     @Test
-    public void shouldPositionBeValidWithinPlateau() {
+    public void shouldPositionBeInValidOutsidePlateau() {
         Rover currentPosition = new Rover(6, 3, "W", 5, 5);
+
+        assertEquals(false, currentPosition.isValid());
+    }
+
+    @Test
+    public void shouldPositionBeInvalidForNegativePosition() {
+        Rover currentPosition = new Rover(5, -8, "W", 5, 5);
 
         assertEquals(false, currentPosition.isValid());
     }

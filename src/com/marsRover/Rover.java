@@ -20,6 +20,7 @@ public class Rover {
     }
 
     public boolean isValid() {
-        return positionX <= upperRightXCoordinate && positionY <= upperRightYCoordinate;
+        return (positionX >= 0 && positionX <= upperRightXCoordinate) &&
+                (positionY >= 0 && positionY <= upperRightYCoordinate);
     }
 }
