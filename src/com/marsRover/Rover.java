@@ -1,18 +1,23 @@
 package com.marsRover;
 
+import java.util.Objects;
+
 public class Rover {
     private int positionX;
     private int positionY;
     private String direction;
     private int upperRightXCoordinate;
     private int upperRightYCoordinate;
+    private String move;
+    String map[] = {"N","W","S","E"};
 
-    public Rover(int positionX, int positionY, String direction, int upperRightXCoordinate, int upperRightYCoordinate) {
+    public Rover(int positionX, int positionY, String direction, int upperRightXCoordinate, int upperRightYCoordinate, String move) {
         this.positionX = positionX;
         this.positionY = positionY;
         this.direction = direction;
         this.upperRightXCoordinate = upperRightXCoordinate;
         this.upperRightYCoordinate = upperRightYCoordinate;
+        this.move = move;
     }
 
     public String currentPosition() {
@@ -25,7 +30,16 @@ public class Rover {
     }
 
 
-    public String turnLeft() {
-        return "2 3 S";
+    public String move() {
+        int i;
+        for (i = 0; i<4; i++)
+            if (Objects.equals(map[i], direction))
+                break;
+        if (Objects.equals(move, "L"))
+        {
+            i++;
+            if (i > 3) i = 0;
+        }
+        return positionX + " " + positionY + " " + map[i];
     }
 }
