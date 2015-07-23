@@ -34,4 +34,11 @@ public class moveRoverTest {
 
         assertEquals(false, currentPosition.isValid());
     }
+
+    @Test
+    public void shouldRoverTurnLeftWhenLeftSpecified() {
+        Rover rover = new Rover(2, 3, "W", 5, 5);
+
+        assertEquals("2 3 S", rover.turnLeft());
+    }
 }

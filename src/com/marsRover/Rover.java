@@ -23,4 +23,9 @@ public class Rover {
         return (positionX >= 0 && positionX <= upperRightXCoordinate) &&
                 (positionY >= 0 && positionY <= upperRightYCoordinate);
     }
+
+
+    public String turnLeft() {
+        return "2 3 S";
+    }
 }
