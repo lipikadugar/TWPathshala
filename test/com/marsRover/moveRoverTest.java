@@ -20,4 +20,11 @@ public class moveRoverTest {
 
         assertEquals(true, currentPosition.isValid());
     }
+
+    @Test
+    public void shouldPositionBeValidWithinPlateau() {
+        Rover currentPosition = new Rover(6, 3, "W", 5, 5);
+
+        assertEquals(false, currentPosition.isValid());
+    }
 }
