@@ -51,8 +51,15 @@ public class moveRoverTest {
 
     @Test
     public void shouldRoverTurnsRight() {
-        Rover rover = new Rover(0, 8, "S", 5, 5, "R");
+        Rover rover = new Rover(0, 3, "S", 5, 5, "R");
 
-        assertEquals("0 8 W", rover.move());
+        assertEquals("0 3 W", rover.move());
+    }
+
+    @Test
+    public void shouldRoverTakeAMove() {
+        Rover rover = new Rover(0, 3, "S", 5, 5, "M");
+
+        assertEquals("0 2 S", rover.move());
     }
 }
